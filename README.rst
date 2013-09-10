@@ -17,10 +17,10 @@ Basic usage
 ------
 
 1. Specify classes definitions in definitions.json (or any other file and
-pass it as argument to generator)
+   pass it as argument to generator)
 
-#.  Run `generator`_. It is python script ``generator.py`` which will
-    generate required headers.
+#. Run `generator`_. It is python script ``generator.py`` which will
+   generate required headers.
 
 #. `Register classes`_.
 
