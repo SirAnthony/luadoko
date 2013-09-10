@@ -15,12 +15,17 @@ Requirements
 
 Basic usage
 ------
+
 1. Specify classes definitions in definitions.json (or any other file and
 pass it as argument to generator)
-#. `Run generator`__. It is python script `generator.py` which will
+
+#. `Run generator`__ . It is python script `generator.py` which will
     generate required headers.
-#. `Register classes`__.
-#. `Register modules`__.
+
+#. `Register classes`__
+
+#. `Register modules`__
+
 #. Compile your project.
 
 
@@ -50,6 +55,7 @@ Simple example first::
 
 Classes defines by its name. Name must be same as in c++ code, it will
 be used directly to create bindings. Classes may contain attributes.
+
 :includes:   Paths to include files where class can be found. May be
              string or array with strings as well.
 :methods:    Description of methods_ avaliable for lua object.
@@ -72,7 +78,9 @@ method for c++ class but appear as id method in lua object.
 
 Binding types
 ----------------
+
 There are three basic types of bindings.
+
 :getter:    Bind to getter method. Only returns something.
 :getset:    Both getter and setter will be generated. Call with argument
             setups argument as a value, without argument returns it.
@@ -84,6 +92,7 @@ Modifiers
 -----------------
 
 For getter and getset types next modifiers are avaliable:
+
 :func:      Changes behaviour of binding. Without this modifier all get
             and set parameters will be treat as attributes. Getter
             for `id` will be writen as `Instance->id` without it and as
@@ -93,12 +102,14 @@ For getter and getset types next modifiers are avaliable:
 .. :checked:   :checked_nil:
 
 Getset specific modifiers:
+
 :flag:      Treat binding as a flag. Class must have `isNAME` `setNAME`
             and `clearNAME` methods to use this. Prefixes can be
             changed in `src\defines.h`.
 
 
-There only two modifiers avaliable for exec type.
+There only two modifiers avaliable for exec type:
+
 :named:     Works like the same modifier for getter and setter
 :noret:     Set executing function to not return anything.
 
