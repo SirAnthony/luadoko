@@ -19,7 +19,7 @@ Basic usage
 1. Specify classes definitions in definitions.json (or any other file and
 pass it as argument to generator)
 
-#. `Run generator`_. It is python script `generator.py` which will
+#.  Run `generator`_. It is python script `generator.py` which will
     generate required headers.
 
 #. `Register classes`_.
@@ -114,8 +114,6 @@ There only two modifiers avaliable for exec type:
 :noret:     Set executing function to not return anything.
 
 
-.. _`Run generator`:
-
 Generator
 ================
 
@@ -157,7 +155,7 @@ Register modules
 ================
 
 One more preparation must be done to successfully binding. In lua
-initialization in main program the `LuaRoutines::routines_open` method,
+initialization in main program the 'LuaRoutines::routines_open' method,
 avaliable in 'LuaRoutines.h', must be called. It'll initialize all
 classes and make it ready for use.
 
