@@ -19,7 +19,7 @@ Basic usage
 1. Specify classes definitions in definitions.json (or any other file and
 pass it as argument to generator)
 
-#.  Run `generator`_. It is python script `generator.py` which will
+#.  Run `generator`_. It is python script ``generator.py`` which will
     generate required headers.
 
 #. `Register classes`_.
@@ -71,10 +71,10 @@ The methods declaration is array with two required items and trailing
 modifiers. First item of array defines type of binding. Second item
 is function name to bind to this binding. Third parameter is function
 modifiers. It may be simple string or list with strings. Fourth element
-is needed only when `named` used as one of modifiers. It is string,
+is needed only when ``named`` used as one of modifiers. It is string,
 allow to specify name for lua object function for this method. For
-example `["getter", "ItemId", "named", "id"]` must be defined as `ItemId`
-method for c++ class but appear as id method in lua object.
+example ``["getter", "ItemId", "named", "id"]`` must be defined as 
+``ItemId`` method for c++ class but appear as id method in lua object.
 
 Binding types
 ----------------
@@ -95,17 +95,18 @@ For getter and getset types next modifiers are avaliable:
 
 :func:      Changes behaviour of binding. Without this modifier all get
             and set parameters will be treat as attributes. Getter
-            for `id` will be writen as `Instance->id` without it and as
-            `Instance->id()` with it.
+            for ``id`` will be writen as ``Instance->id`` without it and
+            as ``Instance->id()`` with it.
 :named:     Using with foruth element allows to specify custom name for
             the binding.
+            
 .. :checked:   :checked_nil:
 
 Getset specific modifiers:
 
-:flag:      Treat binding as a flag. Class must have `isNAME` `setNAME`
-            and `clearNAME` methods to use this. Prefixes can be
-            changed in `src\defines.h`.
+:flag:      Treat binding as a flag. Class must have ``isNAME`` 
+            ``setNAME`` and ``clearNAME`` methods to use this. 
+            Prefixes can be changed in ``src\defines.h``.
 
 
 There only two modifiers avaliable for exec type:
@@ -119,9 +120,9 @@ Generator
 
 The generator is simple python script that take data in json format and
 generates bindings as it says. There are two files generates:
-`CUDataBind.h` and `TypeListDef.h`. First contains the actual binding
-macros and second only helper defines. Both have internal use only so
-there nothing interesting here.
+``CUDataBind.h`` and ``TypeListDef.h``. First contains the actual 
+binding macros and second only helper defines. Both have internal use 
+only so there nothing interesting here.
 Generator may accept filename as first parameter.
 
 Register classes
@@ -130,12 +131,12 @@ Register classes
 There some work must be done to integrate bindings in code:
 
 1. All classes must have CUDataUser as its public superclass.
-2. Class must have protected method `virtual CUData* createUData()`
+2. Class must have protected method ``virtual CUData* createUData()``
    defined. It only requires header defenition but never implementation.
    You can implement it though, this code will run when lua user data
    will be created.
 
-Actually you need only `CUDataUser.h` header in class header.
+Actually you need only ``CUDataUser.h`` header in class header.
 General example, Class.h::
     #include "luadoko/include/CUDataUser.h"
 
@@ -155,8 +156,8 @@ Register modules
 ================
 
 One more preparation must be done to successfully binding. In lua
-initialization in main program the 'LuaRoutines::routines_open' method,
-avaliable in 'LuaRoutines.h', must be called. It'll initialize all
-classes and make it ready for use.
+initialization in main program the ``LuaRoutines::routines_open`` 
+method, avaliable in ``LuaRoutines.h``, must be called. It'll 
+initialize all classes and make it ready for use.
 
 
