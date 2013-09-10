@@ -22,7 +22,7 @@ pass it as argument to generator)
 #. `Run generator`__ . It is python script `generator.py` which will
     generate required headers.
 
-#. `Register classes`__
+#. `Register classes`_
 
 #. `Register modules`__
 
@@ -129,7 +129,8 @@ Generator may accept filename as first parameter.
 Register classes
 ================
 
-There some work must be done to integrate bindings in code.
+There some work must be done to integrate bindings in code:
+
 1. All classes must have CUDataUser as its public superclass.
 2. Class must have protected method `virtual CUData* createUData()`
    defined. It only requires header defenition but never implementation.
