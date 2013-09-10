@@ -8,17 +8,11 @@
 #ifndef LUA_ROUTINES_H_
 #define LUA_ROUTINES_H_
 
-extern "C" {
-	#include "lua.h"
-	#include "lauxlib.h"
-	#include "lualib.h"
-}
-
 typedef int LuaRegRef;
+struct luaState;
 
 namespace LuaRoutines
 {
-
 	void routines_open( lua_State* L );
 	lua_State* routines_state( );
 
@@ -33,7 +27,6 @@ namespace LuaRoutines
 
 	int exec_chunk( unsigned args = 0 );
 	int exec_chunk_from_reg( LuaRegRef r, unsigned args = 0 );
-
 }
 
 #endif /* LUA_ROUTINES_H_ */

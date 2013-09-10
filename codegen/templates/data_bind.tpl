@@ -1,7 +1,7 @@
 /*
  * CUDataBind.h
  * <%! from time import strftime as time %>
- *  Created on: ${"%d of %B" | time}
+ *  Created on: ${"%c" | time}
  *
  * THIS FILE WAS GENERATED AUTOMATICALLY!
  */
