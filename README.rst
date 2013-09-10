@@ -74,7 +74,7 @@ modifiers. It may be simple string or list with strings. Fourth element
 is needed only when ``named`` used as one of modifiers. It is string,
 allow to specify name for lua object function for this method. For
 example ``["getter", "ItemId", "named", "id"]`` must be defined as 
-``ItemId`` method for c++ class but appear as id method in lua object.
+``ItemId`` method for c++ class but appear as ``id`` method in lua object.
 
 Binding types
 ----------------
