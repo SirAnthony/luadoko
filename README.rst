@@ -19,12 +19,12 @@ Basic usage
 1. Specify classes definitions in definitions.json (or any other file and
 pass it as argument to generator)
 
-#. `Run generator`__ . It is python script `generator.py` which will
+#. `Run generator`_. It is python script `generator.py` which will
     generate required headers.
 
-#. `Register classes`_
+#. `Register classes`_.
 
-#. `Register modules`__
+#. `Register modules`_.
 
 #. Compile your project.
 
