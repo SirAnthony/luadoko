@@ -1,4 +1,4 @@
-luadoko
+Luadoko
 =======
 
-C++ library to wrap lua classes
+C++ library to bind classes to lua

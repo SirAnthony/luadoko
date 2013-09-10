@@ -1,0 +1,114 @@
+{
+    "Unit": {
+        "includes": [
+            "units/Unit.h"
+        ],
+        "methods": [
+            ["getset", "UnitName", "func"],
+            ["getset", "UnitPos", "func"],
+            ["getset", "UnitX", "func"],
+            ["getset", "UnitY", "func"],
+            ["getset", "UnitZ", "func"],
+            ["getset", "UnitSize", "func"],
+            ["getter", "UnitId", "func"],
+            ["getter", "UnitName", "func"],
+            ["getter", "UnitTypeName", "func"],
+            ["getset", "Deleted", "flag"],
+            ["exec", "emitEvent", "noret"],
+            ["exec", "setAction", "noret"],
+            ["exec", "getBuild", "noret"],
+            ["exec", "dist", "noret"],
+            ["exec", "color", "noret"]
+        ]
+    },
+    "UnitStatic": {
+        "includes": "units/UnitStatic.h",
+        "inherit": "Unit"
+    },
+    "Corpse": {
+        "includes": "units/UnitCorpse.h",
+        "inherit": "UnitStatic"
+    },
+    "UnitDynamic": {
+        "inherit": "Unit",
+        "includes": [
+            "units/UnitDynamic.h"
+        ],
+        "methods": [
+            ["getset", "Scope", "flag"],
+            ["getset", "Moving", "flag"],
+            ["exec", "addPathTarget", "noret"],
+            ["exec", "getClosest", "noret"]
+        ]
+    },
+    "Entity": {
+        "includes": "units/UnitEntity.h",
+        "inherit": "UnitDynamic"
+    },
+    "Player": {
+        "includes": "units/UnitPlayer.h",
+        "inherit": "UnitDynamic"
+    },
+
+    "Widget": {
+        "includes": "interface/widgets/Widget.h",
+        "methods": [
+            ["getter", "WidgetId", "func"],
+            ["getter", "WidgetType", "func"],
+            ["getter", "WidgetWidth", "func"],
+            ["getter", "WidgetHeight", "func"],
+            ["getter", "WidgetRealX", "func"],
+            ["getter", "WidgetRealY", "func"],
+            ["getter", "ChildrenCount", "func"],
+            ["getter", "WidgetName", "func"],
+            ["getset", "WidgetX", "func"],
+            ["getset", "WidgetY", "func"],
+            ["getset", "WidgetPicture", "func"],
+            ["exec", "load"],
+            ["exec", "resize"],
+            ["exec", "toggle"],
+            ["exec", "bindParam"],
+            ["exec", "children", "named", "getChildren"]
+        ]
+    },
+    "WidgetText": {
+        "inherit": "Widget",
+        "includes": "interface/widgets/WidgetText.h",
+        "methods": [
+            ["getset", "WidgetText", "func"],
+            ["getter", "Lines", "func"],
+            ["getter", "LineSize", "func"],
+            ["getset", "LineHeight", "func"],
+            ["getset", "Cursor", "func"]
+        ]
+    },
+    "WidgetBar": {
+        "inherit": "WidgetText",
+        "includes": "interface/widgets/WidgetBar.h",
+        "methods": [
+            ["getset", "BarSize", "func"],
+            ["exec", "bindBarMaxValue"]
+        ]
+    },
+
+    "CharBuild": {
+        "includes": "units/YOBA.h",
+        "methods": [
+            ["getset", "Damage", "func"],
+            ["exec", "tire"],
+            ["exec", "levelUp"],
+            ["exec", "get"],
+            ["exec", "set"]
+        ]
+    },
+    "LightSource": {
+        "includes": "graphics/Lighting.h",
+        "methods": [
+            ["getset", "color"],
+            ["getset", "ambient"],
+            ["getset", "diffuse"],
+            ["getset", "direction"],
+            ["getset", "position"]
+        ]
+    }
+}
