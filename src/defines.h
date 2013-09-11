@@ -13,5 +13,9 @@
 #define FLAG_SET set
 #define FLAG_REMOVE clear
 
+// Macro for getset function naming: getFIELD(); setFIELD()
+#define FUNC_GET get
+#define FUNC_SET set
+
 
 #endif /* CUDATA_DEFINES_H_ */
